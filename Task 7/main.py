@@ -18,7 +18,12 @@ if option == '1':
         print("Вы ввели недопустимое значение")
         sys.exit(1)
 
-    s = a * b * c
+    p = (a + b + c)/2
+    try:
+        s = math.sqrt(p * (p - a) * (p - b) * (p - c))
+    except ValueError:
+        print("Нельзя извлечь корень из отрицательного числа")
+        sys.exit(1)
 
 elif option == '2':
     try:
